@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votacao</title>
+</head>
+<body>
+    <h1>Sistema de Votacao</h1>
+    Sua idade para Votacao : <input type="number" name="txtidade" id="txtidade">
+    <input type="button" value="Verificar"onclick = calcular()>
+    <div id = "res">
+
+    </div>
+    <script>
+        function calcular(){
+            var txti = document.querySelector('input#txtidade')
+            var res = document.querySelector('div#res')
+            var idade = Number(txti.value)
+            res.innerHTML = `<p>Voce tem  ${idade} anos</p>`
+            if (idade < 16){
+                res.innerHTML += ('Nao vota')
+        }   else if (idade < 18 || idade >=65) {
+                res.innerHTML += ('Voto opcional')
+        }    else {
+        res.innerHTML +=('Voto obrigatorio')
+        } 
+}
+    </script>
+</body>
+</html>

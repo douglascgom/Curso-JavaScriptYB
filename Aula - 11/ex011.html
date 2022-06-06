@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Sistema de Nascionalide</h1>
+    Pais que voce nasceu : <input type="text" name="txtpais" id="txtpais">
+    <input type="button" value="Verificar"onclick = 'calcular()'>
+    <div id = "res">
+
+    </div>
+
+    <script>
+        function calcular(){
+            var txtp = document.querySelector("input#txtpais")
+            var res = document.querySelector("div#res")
+            var pais = (txtp.value)
+            res.innerHTML = `<p>Voce nasceu  no <strong>${pais}</strong></p>`
+            if(pais == "Brasil" || pais == "brasil" || pais == "Brazil" || pais == "brazil"){
+                res.innerHTML += "A sua nascionalidade e <strong>Brasileiro</strong>!"
+            } 
+            else {
+                res.innerHTML = "Voce é <strong>Estrangeiro</strong> !"
+            }
+        }
+
+    </script>
+</body>
+</html>
